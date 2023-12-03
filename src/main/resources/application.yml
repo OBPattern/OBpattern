@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: obp-demo
+  datasource:
+    url: jdbc:postgresql://droopy-walker-7400.8nk.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full&password=_4ZqkumKHf0SAyaXkbm3-w&user=shivi
+    username: shivi
+    hikari:
+      connection-init-sql: Create schema if not exists DEMOB
+  jpa:
+    properties:
+      hibernate:
+        generate_statistics: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+  config:
+    import: "optional:configserver"
+  zipkin:
+    enabled: false
+
+server:
+  port: 8080
